@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P-Sharp — Язык будущего</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f3f3f3;
+      --accent: #0078d4;
+      --text: #1a1a1a;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --radius: 16px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text);
+    }
+
+    header {
+      background: white;
+      box-shadow: var(--shadow);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .lang-switcher {
+      margin-left: 2rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 120, 212, 0.3);
+      transition: background 0.3s;
+    }
+
+    .lang-switcher:hover {
+      background: #005a9e;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .hero button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .tile {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+
+    .tile:hover {
+      transform: translateY(-4px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>P-Sharp</strong></div>
+    <nav>
+      <a href="#" id="nav-home">Главная</a>
+      <a href="install.html" id="nav-install">Установка</a>
+      <a href="#docs" id="nav-docs">Документация</a>
+      <select class="lang-switcher" id="languageSwitcher">
+        <option value="ru">🇷🇺 Русский</option>
+        <option value="en">🇺🇸 English</option>
+      </select>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 id="hero-title">Язык программирования P-Sharp</h1>
+    <p id="hero-sub">Современный, лёгкий, модульный. P-Sharp создан для новых поколений разработчиков, ценящих простоту и мощь одновременно.</p>
+    <button onclick="location.href='install.html'" id="hero-button">Начать</button>
+  </section>
+
+  <section class="tiles">
+    <div class="tile">
+      <h3 id="tile-1-title">⚡ Быстрый старт</h3>
+      <p id="tile-1-text">Простой синтаксис, быстрая установка и минимальные зависимости.</p>
+    </div>
+    <div class="tile">
+      <h3 id="tile-2-title">🧠 Умный подход</h3>
+      <p id="tile-2-text">Поддержка логики, процедур, и простого программирования без классов.</p>
+    </div>
+    <div class="tile">
+      <h3 id="tile-3-title">🎨 Современный стиль</h3>
+      <p id="tile-3-text">Интерфейс, вдохновлённый Visual Basic и Python, легко осваивается.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 P-Sharp. Все права защищены.
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "nav-home": "Home",
+        "nav-install": "Installation",
+        "nav-docs": "Documentation",
+        "hero-title": "P-Sharp Programming Language",
+        "hero-sub": "Modern, lightweight, modular. P-Sharp is built for developers who value simplicity and power.",
+        "hero-button": "Get Started",
+        "tile-1-title": "⚡ Quick Start",
+        "tile-1-text": "Simple syntax, fast install, and minimal dependencies.",
+        "tile-2-title": "🧠 Smart Approach",
+        "tile-2-text": "Support for logic and procedures without the complexity of classes.",
+        "tile-3-title": "🎨 Modern Style",
+        "tile-3-text": "Inspired by Visual Basic and Python. Easy to learn, easy to use."
+      },
+      ru: {
+        "nav-home": "Главная",
+        "nav-install": "Установка",
+        "nav-docs": "Документация",
+        "hero-title": "Язык программирования P-Sharp",
+        "hero-sub": "Современный, лёгкий, модульный. P-Sharp создан для новых поколений разработчиков, ценящих простоту и мощь одновременно.",
+        "hero-button": "Начать",
+        "tile-1-title": "⚡ Быстрый старт",
+        "tile-1-text": "Простой синтаксис, быстрая установка и минимальные зависимости.",
+        "tile-2-title": "🧠 Умный подход",
+        "tile-2-text": "Поддержка логики, процедур, и простого программирования без классов.",
+        "tile-3-title": "🎨 Современный стиль",
+        "tile-3-text": "Интерфейс, вдохновлённый Visual Basic и Python, легко осваивается."
+      }
+    };
+
+    const switcher = document.getElementById("languageSwitcher");
+    switcher.addEventListener("change", (e) => {
+      const lang = e.target.value;
+      const strings = translations[lang];
+      for (const id in strings) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = strings[id];
+      }
+    });
+  </script>
+</body>
+</html>
